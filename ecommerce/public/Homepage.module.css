@@ -1,0 +1,133 @@
+.searchlogo{
+    font-size: 20px;
+    font-weight: bolder;
+}
+.profilediv{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.profileAfter{
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  right: 2%;
+  top: 55px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
+
+}
+/* .profileAfter::before{
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid black;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
+
+} */
+
+
+.screen{
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+}
+
+.whitelink{
+    color: #ffffff; /* Sets the text color to white */
+    text-decoration: none; /* Removes underline by default */
+    transition: color 0.3s ease; /* Adds a smooth transition effect when the color changes */
+  }
+  
+  .whitelink:hover {
+    color: #e6e6e6; /* Changes the text color on hover */
+  }
+
+
+
+
+  .scrolldiv{
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+
+  }
+  .cardShadow{
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+.shoesShadow{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.searchInput{
+  background-image: url('../public/search2.png');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 40px;
+  background-size: 25px;
+
+}
+.backgroundImage{
+  background-image: url('../public/back1.png');
+  background-repeat: no-repeat;
+  background-size: 180px;
+  background-position-x: 10px;
+  background-position-y:center ;
+
+}
+
+.newImage{
+  background-image: url('../public/new.png');
+  background-repeat: no-repeat;
+  background-size: 180px;
+  background-position-x: 280px;
+  background-position-y: 500px;
+}
+
+.sidebar{
+  position: fixed;
+  top: 37px;
+  overflow: hidden;
+  z-index: 2;
+  height: 100vh;
+  width: 160px;
+}
+
+.activeLink{
+  background-color: #007bff;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+.link{
+color: white;
+display: flex;
+justify-content: space-around;
+
+}
+.link:hover{
+
+}
+
+.profile_dd_btn{
+   height: 50px;
+   width: 50px;
+   border-radius: 50%;
+   overflow: hidden;
+  
+}
+.searchlist{
+  height: 300px;
+  width: 400px; 
+  position: absolute;
+  top: 55px;
+  right: 12%;
+  margin-left: auto;
+  display: block;
+  
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; 
+  overflow: auto;
+}
+
