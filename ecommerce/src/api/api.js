@@ -1,4 +1,3 @@
-import {getCookie} from '../helper/getCookie';
 import axios from "axios"
 
 
@@ -47,7 +46,11 @@ const getProductByVendorApi=()=>Api.get('/product/get-products-by-vendor/',);
 const getProductByIdApi=(product_id)=>Api.get(`product/get-product-by-id/${product_id}/`);
 const delteProductByIdApi=(product_id)=>Api.delete(`product/delete-by-id/${product_id}/`);
 const createReviewApi=(data)=>Api.post('/product/review/',data);
-const getReviewsApi=(product_id)=>Api.get(`/product/review/${product_id}`)
+const getReviewsApi=(product_id)=>Api.get(`/product/review/${product_id}`);
+const resetOtpApi=()=>Api.post(`/account/reset-otp/`);
+const updatePasswordApi=(data)=>Api.post(`/account/update-password/`,data);
+const fetchAdminLogsApi=()=>Api.get('/account/logs/');
+const validateUserTokenApi=()=>Api.post('/account/validate-user/');
 export{
     sendOTPApi,
     signupApi,
@@ -75,4 +78,8 @@ export{
     delteProductByIdApi,
     createReviewApi,
     getReviewsApi,
+    resetOtpApi,
+    updatePasswordApi,
+    fetchAdminLogsApi,
+    validateUserTokenApi,
 }

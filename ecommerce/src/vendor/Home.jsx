@@ -4,9 +4,16 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { IconButton } from '@mui/material';
 import { Delete, ModeEdit, RemoveRedEye } from '@mui/icons-material';
-import NavBar from './NavBar';
+import NavBar from '../components/NavBar';
+import { useSelector } from 'react-redux';
 
 const VendorHome = () => {
+  const authData=useSelector((state)=>state.auth);
+  // useEffect(()=>{
+  //   if(authData.is_vendor!==true){
+  //     navigate("/login");
+  //   }
+  // },[])
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
   const getProductByVendor = async () => {
@@ -14,12 +21,12 @@ const VendorHome = () => {
       const response = await getProductByVendorApi();
       if (response.status !== 200) {
         toast.error('Please login as vendor');
-        // navigate('/vendor/login/');
+        navigate('/vendor/login/');
       }
       setProducts(response.data.data);
     } catch (error) {
       toast.error('Please login as vendor');
-      // navigate('/vendor/login/');
+      navigate('/vendor/login/');
     }
   };
 

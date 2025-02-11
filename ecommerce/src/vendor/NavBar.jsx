@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setSearchQuery, setSearchResults } from '../reducer/searchSlice';
 import { searchProductsApi } from '../api/api';
 import { Avatar, IconButton } from '@mui/material';
-import { Add, AddBox, Home } from '@mui/icons-material';
+import { Add,  Home } from '@mui/icons-material';
 import { deepPurple } from '@mui/material/colors';
 
 function NavBar(props) {
@@ -23,10 +23,6 @@ function NavBar(props) {
  const redirectAddProduct=()=>{
     navigate('/vendor/addproduct')
  }
-
-
-
- 
 
 
   

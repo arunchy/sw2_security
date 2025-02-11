@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Style from '../styles/Signup.module.css';
 import {TextField,Button,IconButton,InputAdornment} from '@mui/material';
 import { VisibilityOff,Visibility,AlternateEmail } from '@mui/icons-material';
 import { loginApi, vendorLoginApi } from '../api/api';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 function Login() {
+
+  const authData=useSelector((state)=>state.auth);
+  // useEffect(()=>{
+  //  if(!authData.is_authenticated){
+  //   naviate("/");
+  //  }
+  // },[])
   const [userData, setUserData] = useState({
     email: '',
     password: ''
@@ -25,7 +33,7 @@ function Login() {
   const handleLogin = async() => {
     try{
       setIsLoading(true);
-      userData.user_type="vendor"
+      userData.user_type="customer"
     const response=await vendorLoginApi(userData);
     if(response.status===200){
       toast.success(response.data.message)

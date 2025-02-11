@@ -133,7 +133,7 @@ function VendorLogin() {
 
           <div className='row d-flex align-items-center justify-content-center'>
             <div className='col-sm-6 my-2 d-flex'>
-              <p className='mx-1' style={{ fontSize: "13px" }}>Don't have an account?</p>
+              <p className='mx-1' style={{ fontSize: "13px" }}>Don't have an vendor account?</p>
               <a href='/vendor/signup' style={{ fontSize: "13px", color: "yellow", textDecoration: "none" }}>SIGNUP</a>
             </div>
           </div>

@@ -140,7 +140,7 @@ const createProduct=async(formData)=>{
         formData.append("size_XL",values.sizeXL);
         formData.append("size_XXL",values.sizeXXL);
         createProduct(formData);
-        resetForm();
+        // resetForm();
         
         
      

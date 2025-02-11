@@ -4,9 +4,18 @@ import styles from '../styles/Homepage.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSearchQuery, setSearchResults } from '../reducer/searchSlice';
 import { searchProductsApi } from '../api/api';
-import { Button } from '@mui/material';
+
+import { toast } from 'react-toastify';
 
 function NavBar(props) {
+  const authData=useSelector((state)=>state.auth);
+  console.log("authData: ",authData)
+  // useEffect(()=>{
+  //   if(authData.is_authenticated===false){
+  //     toast("please login as customer...");
+  //     navigate("/login")
+  //   }
+  // },[])
   const dispatch=useDispatch(); 
   const[query,setQuery]=useState(useSelector((state)=>state.search.query));
   const navigate=useNavigate();
@@ -26,6 +35,9 @@ function NavBar(props) {
   }
   const redirectDashboard=()=>{
     navigate('/vendor/home')
+  }
+  const redirectAdmin=()=>{
+    navigate("/admin/dashboard")
   }
    // const redirectProfile=()=>{
    //  navigate.push('/Profile')
@@ -103,7 +115,15 @@ function NavBar(props) {
     <div className='col-sm-4 d-md-flex d-sm-none d-none align-items-center justify-content-md-around'>
       <button className={navigate.pathname==='/Home'?'btn btn-primary':'btn btn-outline-secondary'} onClick={redirectHome}><a className='text-white' href='/'><span className='bi bi-house'></span></a></button>
       <button className={navigate.pathname==='/Cart'?'btn btn-primary':'btn btn-outline-secondary'} onClick={redirectCart}><span className='bi bi-cart'></span></button>
-      <button className={navigate.pathname==='/Admin'?'btn btn-primary':'btn btn-outline-secondary'} onClick={redirectDashboard}><span className='bi bi-person-fill-gear'></span></button>
+     {
+      authData.is_vendor ?  <button className={navigate.pathname==='/vendor'?'btn btn-primary':'btn btn-outline-secondary'} onClick={redirectDashboard}><span className='bi bi-person-fill-add'></span></button> :''
+     }
+
+     {
+      authData.is_admin ? <button className={navigate.pathname==='/admin'?'btn btn-primary':'btn btn-outline-secondary'} onClick={redirectAdmin}><span className='bi bi-person-fill-gear'></span></button> : ''
+     }
+
+
       
       
     </div>
@@ -122,7 +142,9 @@ function NavBar(props) {
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><a class="dropdown-item" href="/profile">profile</a></li>
-    <li><a href='/logout'>Logout</a></li>
+    <li><Link className='dropdown-item' to='/resetPassword'>UpdatePassword</Link></li>
+    <li><Link className='dropdown-item' to='/logout'>Logout</Link></li>
+ 
   </ul>
 </div>
       
@@ -181,7 +203,8 @@ function NavBar(props) {
    
    
       
-   <div className='row p-2 ' >
+  {
+    authData.is_authenticated && authData.is_vendor !==true && authData.is_admin!==true ?  <div className='row p-2 ' >
     <ul style={{listStyleType:"none",display:"flex",justifyContent:"space-around", margin:"0"}}>
     <li ><a className='text-black' style={{textDecoration:"none"}} href='/category/Tshirt'>Tshirt</a></li>
       <li ><a className='text-black' style={{textDecoration:"none"}} href='/category/Jens'>Jeans</a></li>
@@ -193,7 +216,8 @@ function NavBar(props) {
       <li ><a className='text-black' style={{textDecoration:"none"}} href='/category/Accessories'>Accessories</a></li>
       <li ><a className='text-black' style={{textDecoration:"none"}} href='/category/Other'>Other</a></li>
     </ul>
-    </div>
+    </div> :'' 
+  }
 
    
   </div>

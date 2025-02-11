@@ -22,11 +22,16 @@ import VendorLogin from './vendor/VendorLogin';
 import VendorHome from './vendor/Home';
 import Crud from './vendor/AddProduct';
 import VendorProduct from './vendor/Product';
+import ResetPassword from './pages/ResetPassword';
+import ResetOtp from './pages/PasswordOtp';
+import AdminLogs from './admin/AdminLogs';
+import AuthenticateUser from './components/AuthenticateUser';
 
 function App() {
   return (
     <Provider store={store}>
     <Router>
+      <AuthenticateUser></AuthenticateUser>
       <ToastContainer> </ToastContainer>
       <Routes>
       <Route path='/' element={<Home></Home>}></Route>
@@ -47,9 +52,13 @@ function App() {
       <Route path='vendor/view/:id' element={<VendorProduct></VendorProduct>}></Route>
       <Route path='/vendor/login' element={<VendorLogin></VendorLogin>}></Route>
       <Route path='/vendor/home' element={<VendorHome></VendorHome>}></Route>
-     
+      <Route path='/resetPassword' element={<ResetPassword></ResetPassword>}></Route>
+      <Route path='/resetotp' element={<ResetOtp></ResetOtp>}></Route>
+      <Route path='/admin/dashboard' element={<AdminLogs></AdminLogs>}></Route>
+      <Route path='/logout' element={<Logout></Logout>}></Route>
+     a
       </Routes>
-     
+      
     </Router> 
     </Provider> 
   );

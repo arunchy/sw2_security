@@ -2,16 +2,21 @@ import React, {  useEffect, useState } from 'react';
 import styles from '../styles/Homepage.css';
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../components/NavBar';
-import { addToCartApi, getAllProductApi, getBrandsApi, getFemaleProductApi, getLatestProduct, getLatestProductApi, getMenProductsApi, getProductByBrand } from '../api/api';
+import { addToCartApi, getAllProductApi, getBrandsApi, getFemaleProductApi, getLatestProductApi, getMenProductsApi, getProductByBrand } from '../api/api';
 import { toast } from 'react-toastify';
-import { Button, Card, CardActions, CardContent, CardMedia, IconButton, Typography } from '@mui/material'
-import { RemoveRedEye, ShoppingBag, ShoppingCart } from '@mui/icons-material';
-
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material'
+import { RemoveRedEye,  ShoppingCart } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
 
  
 export default function Home() {
- 
-
+  //  const authData=useSelector((state)=>state.auth);
+  //  console.log("auth data: ",authData)
+  //  useEffect(() => {
+  //   if (!authData.is_authenticated) {
+  //     navigate("/login");
+  //   }
+  // }, [authData.is_authenticated]);
    const [latestProduct,setLatestProduct]=useState({});
    const [productBrands,setProductBrand]=useState([]);
    const [productsByBrands,setProductsByBrand]=useState([]);

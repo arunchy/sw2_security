@@ -146,6 +146,12 @@ function Login() {
             <a href='/signup' style={{ fontSize: "13px", color: "yellow", textDecoration: "none" }}>SIGNUP</a>
           </div>
         </div>
+        <div className='row d-flex align-items-center justify-content-center'>
+        <div className='col-sm-6 my-2 d-flex'>
+            <p className='mx-1' style={{ fontSize: "13px" }}>Login as Vendor? </p>
+            <a href='/vendor/login' style={{ fontSize: "13px", color: "yellow", textDecoration: "none" }}>LOGIN</a>
+          </div>
+        </div>
       </div>
     </div>
   );
